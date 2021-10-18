@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aks-hello4
+  namespace: argo-cd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/exabugs/test_helm"
+    path: hello-world
+    targetRevision: HEAD
+    helm:
+      parameters:
+        - name: favoriteDrink
+          value: coffee-2021
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: aks-hello4
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
