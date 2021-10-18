@@ -8,6 +8,8 @@ kind: Deployment
 metadata:
   name: aks-helloworld
   namespace: {{ .Release.Name }}
+  annotations:
+    argocd.argoproj.io/external-link: http://my-grafana.com/pre-generated-link
 spec:
   replicas: 1
   selector:
@@ -46,7 +48,6 @@ metadata:
   namespace: {{ .Release.Name }}
   annotations:
     kubernetes.io/ingress.class: nginx
-    argocd.argoproj.io/external-link: http://my-grafana.com/pre-generated-link
 spec:
   rules:
     - host: {{ .Release.Name }}.dabaas.net
