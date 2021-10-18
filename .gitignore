@@ -1,0 +1,6 @@
+*.plan
+.terraform
+kubeconfig
+.terraform.lock.hcl
+
+.vscode
