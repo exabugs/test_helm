@@ -10,6 +10,7 @@ metadata:
   namespace: {{ .Release.Name }}
   annotations:
     link.argocd.argoproj.io/external-link: https://{{ .Release.Name }}.dabaas.net
+    link.argocd.argoproj.io/external-link: https://google.co.jp
 spec:
   replicas: 1
   selector:
