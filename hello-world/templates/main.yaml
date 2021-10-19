@@ -49,6 +49,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
+  tls:
+  - hosts:
+      - {{ .Release.Name }}.dabaas.net
   rules:
     - host: {{ .Release.Name }}.dabaas.net
       http:
