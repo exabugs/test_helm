@@ -4,3 +4,4 @@ kubeconfig
 .terraform.lock.hcl
 
 .vscode
+.env

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello5
+  name: hello6
 spec:
   destination:
     name: ""
@@ -15,7 +15,7 @@ spec:
       parameters:
         - name: favoriteDrink
           value: coffee-2021
-  project: default
+  project: express
   syncPolicy:
     automated:
       prune: true
