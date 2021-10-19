@@ -6,16 +6,16 @@ spec:
   destination:
     name: ""
     namespace: hello6
-    server: "https://kubernetes.default.svc"
+    server: https://kubernetes.default.svc
   source:
     path: hello-world2
-    repoURL: "https://github.com/exabugs/test_helm"
+    repoURL: https://github.com/exabugs/test_helm
     targetRevision: HEAD
     helm:
       parameters:
         - name: favoriteDrink
           value: coffee-2021
-  project: express
+  project: default
   syncPolicy:
     automated:
       prune: true
