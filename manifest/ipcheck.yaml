@@ -9,6 +9,10 @@ spec:
     repoURL: https://github.com/exabugs/test_helm
     path: ipcheck
     targetRevision: HEAD
+    helm:
+      parameters:
+        - name: host
+          value: ipcheck.dabaas.net
   destination:
     server: https://kubernetes.default.svc
     namespace: ipcheck
