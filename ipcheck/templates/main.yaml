@@ -37,7 +37,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: {{ .Values.host }}
+    - host: ipcheck.dabaas.net
       http:
         paths:
           - path: /
