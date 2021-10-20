@@ -23,4 +23,6 @@ version: 0.1.0
 # It is recommended to use it with quotes.
 appVersion: "1.16.0"
 
+# [INFO] Chart.yaml: icon is recommended
+# A URL to an SVG or PNG image to be used as an icon (optional).
 icon: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png
