@@ -19,7 +19,7 @@ spec:
             - containerPort: 80
           env:
             - name: TITLE
-              value: {{ .Release.Name }}.dabaas.net
+              value: {{ .Release.Name }}.dabaas.net (10/20 13:54)
 ---
 apiVersion: v1
 kind: Service
