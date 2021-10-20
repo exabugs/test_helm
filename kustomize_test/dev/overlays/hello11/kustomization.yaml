@@ -4,7 +4,19 @@ kind: Kustomization
 resources:
   - ../../../base
 
-nameSuffix: -hello11
+# nameSuffix: -hello11
 
-patchesStrategicMerge:
-  - deployment.yaml
+patchesJson6902:
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: aks-helloworld
+    path: patch_1.yaml
+
+  - target:
+      group: networking.k8s.io
+      version: v1
+      kind: Ingress
+      name: aks-helloworld
+    path: patch_2.yaml
