@@ -1,2 +1,2 @@
 host: ipcheck.dabaas.net
-ipWhitelist: "153.246.11.138/32,113.37.158.32/29"
+ipWhitelist: ""

@@ -13,6 +13,8 @@ spec:
       parameters:
         - name: host
           value: ipcheck.dabaas.net
+        - name: ipWhitelist
+          value: "153.246.11.138/32,113.37.158.32/29"
   destination:
     server: https://kubernetes.default.svc
     namespace: ipcheck
