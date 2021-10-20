@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: da-express
+data:
+  DA_MODE: "EXPRESS"
+  DA_LOG_LEVEL: "warn"
