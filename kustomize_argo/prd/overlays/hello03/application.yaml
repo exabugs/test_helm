@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: customer
+  namespace: argo-cd
+spec:
+  destination:
+    namespace: customer-hello03
+  source:
+    helm:
+      parameters:
+        - name: favoriteDrink
+          value: coffee-2022
