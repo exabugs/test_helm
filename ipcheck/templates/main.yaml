@@ -37,7 +37,6 @@ metadata:
     kubernetes.io/ingress.class: nginx
 {{ if .Values.ipWhitelist }}
     nginx.ingress.kubernetes.io/whitelist-source-range: {{ .Values.ipWhitelist }}
-    #  {{ join("\\,", .Values.ipWhitelist) }}
 {{ end }}
 spec:
   rules:
