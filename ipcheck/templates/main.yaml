@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ipcheck
-          image: ghcr.io/exabugs/ipcheck:latest
+          image: ghcr.io/exabugs/ipcheck:202110220037
           ports:
             - containerPort: 8080
 ---
