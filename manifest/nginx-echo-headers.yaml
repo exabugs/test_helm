@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-echo-headers
+  namespace: argo-cd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/exabugs/test_helm
+    path: nginx-echo-headers
+    targetRevision: HEAD
+    helm:
+      parameters:
+        - name: host
+          value: nginx-echo-headers.dabaas.net
+        - name: ipWhitelist
+          value: "153.246.11.138/32,113.37.158.32/29"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nginx-echo-headers
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
