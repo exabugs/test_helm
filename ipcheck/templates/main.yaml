@@ -35,9 +35,7 @@ metadata:
   name: ipcheck
   annotations:
     kubernetes.io/ingress.class: nginx
-{{ if .Values.ipWhitelist }}
     nginx.ingress.kubernetes.io/whitelist-source-range: {{ .Values.ipWhitelist }}
-{{ end }}
 spec:
   rules:
     - host: {{ .Values.host }}
