@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: nginx-echo-headers
-          image: brndnmtthws/nginx-echo-headers:latest
+          # image: brndnmtthws/nginx-echo-headers:latest
+          image: ghcr.io/exabugs/nginx-echo-headers:20211022_01
           ports:
             - containerPort: 8080
 ---
