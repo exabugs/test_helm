@@ -38,6 +38,7 @@ metadata:
 {{ if .Values.ipWhitelist }}
     nginx.ingress.kubernetes.io/whitelist-source-range: {{ .Values.ipWhitelist }}
 {{ end }}
+    nginx.ingress.kubernetes.io/custom-http-errors: 403
 spec:
   rules:
     - host: {{ .Values.host }}
