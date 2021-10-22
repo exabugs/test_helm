@@ -40,12 +40,12 @@ metadata:
 {{ end }}
     nginx.ingress.kubernetes.io/custom-http-errors: "403"
     # nginx.ingress.kubernetes.io/server-snippet: |
-    nginx.org/server-snippets: |
-      error_page 403 = @errorpages;
-      location = @errorpages {
-        return 403 "HELLO 403 Forbidden";
-        internal;
-      }
+    # nginx.org/server-snippets: |
+    #   error_page 403 = @errorpages;
+    #   location = @errorpages {
+    #     return 403 "HELLO 403 Forbidden";
+    #     internal;
+    #   }
     # nginx.org/server-snippets: |
     #   proxy_intercept_errors on;
     #   error_page 404 = @errorpages;
