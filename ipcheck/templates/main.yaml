@@ -39,12 +39,20 @@ metadata:
     nginx.ingress.kubernetes.io/whitelist-source-range: {{ .Values.ipWhitelist }}
 {{ end }}
     nginx.ingress.kubernetes.io/custom-http-errors: "403"
-    nginx.ingress.kubernetes.io/server-snippet: |
-      error_page 403 = /403.html;
-      location = /403.html {
+    # nginx.ingress.kubernetes.io/server-snippet: |
+    nginx.org/server-snippets: |
+      error_page 403 = @errorpages;
+      location = @errorpages {
         return 403 "HELLO 403 Forbidden";
         internal;
       }
+    # nginx.org/server-snippets: |
+    #   proxy_intercept_errors on;
+    #   error_page 404 = @errorpages;
+    #   location @errorpages {
+    #     proxy_set_header X-Code $status;
+    #     proxy_pass http://errors-svc.default.svc.cluster.local;
+    #   }
 spec:
   rules:
     - host: {{ .Values.host }}
