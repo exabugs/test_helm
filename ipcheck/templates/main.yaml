@@ -70,3 +70,17 @@ spec:
                 name: ipcheck
                 port:
                   number: 8080
+
+# matchValues: ['/api/system/alive'],
+# matchValues: ['/api/auth/saml', '/samlAuth'],
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ingress-nginx-controller
+  # namespace: ingress-nginx
+data:
+  proxy-connect-timeout: "10"
+  proxy-read-timeout: "120"
+  proxy-send-timeout: "120"
+  proxy-set-headers: "ingress-nginx/custom-headers"
