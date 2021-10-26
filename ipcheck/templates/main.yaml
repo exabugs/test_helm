@@ -43,6 +43,7 @@ metadata:
       add_header X-Frame-Options 'SAMEORIGIN';
 
       # レート制限を有効化
+      limit_req zone=authentication_ratelimit nodelay;
       # limit_req zone=limit10 burst=10 nodelay; # 秒間:10 バースト:10
       limit_req zone=limit01 nodelay; # 秒間:1 バースト:0
       limit_req_status 429;
@@ -81,6 +82,7 @@ spec:
                 port:
                   number: 8080
 
+# No-Limit
 # matchValues: ['/api/system/alive'],
 # matchValues: ['/api/auth/saml', '/samlAuth'],
 
